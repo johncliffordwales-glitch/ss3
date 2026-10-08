@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Screen 1</title>
+
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      background: black;
+      overflow: hidden;
+    }
+
+    #slideshow {
+      width: 100vw;
+      height: 100vh;
+      object-fit: contain;
+    }
+  </style>
+</head>
+
+<body>
+
+  <img id="slideshow" src="01.jpeg">
+
+  <script>
+    const pictures = [
+      "01.jpeg",
+      "02.jpeg",
+      "03.jpeg"
+    ];
+
+    let current = 0;
+
+    setInterval(() => {
+      current++;
+
+      if (current >= pictures.length) {
+        current = 0;
+      }
+
+      document.getElementById("slideshow").src = pictures[current];
+
+    }, 10000);
+  </script>
+
+</body>
+</html>
